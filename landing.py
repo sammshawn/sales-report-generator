@@ -1,8 +1,9 @@
 """
-Landing Page — Sales Report Generator (Premium v2)
+Landing Page — Sales Report Generator (Premium v3)
 ===================================================
-Beautiful, animated landing page with sidebar hidden for a clean
-marketing look. Entry point for the app.
+Beautiful, animated landing page with sidebar hidden. Entry point for the app.
+Includes: hero, trust strip, features, how-it-works, pricing, and a
+clarifying note about the free trial + paid monthly service.
 """
 
 import streamlit as st
@@ -14,7 +15,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# HIDE STREAMLIT CHROME (sidebar, header, footer)
+# HIDE STREAMLIT CHROME + CUSTOM STYLES
 # ============================================================
 st.markdown("""
 <style>
@@ -253,6 +254,27 @@ st.markdown("""
     }
     .trust-strip span { display: flex; align-items: center; gap: 0.5rem; }
 
+    /* ---------- CLARIFYING NOTE ---------- */
+    .pricing-note {
+        background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+        border-left: 4px solid #2E75B6;
+        padding: 1.25rem 1.75rem;
+        border-radius: 12px;
+        margin: 1.5rem auto 3rem auto;
+        max-width: 900px;
+        text-align: center;
+        color: #0F2E4F;
+        font-size: 1rem;
+        line-height: 1.6;
+        animation: fadeInUp 0.6s ease both;
+        box-shadow: 0 4px 16px rgba(31,78,120,0.08);
+    }
+    .pricing-note strong { color: #1F4E78; }
+    .pricing-note a {
+        color: #1F4E78; font-weight: 700;
+        text-decoration: none; border-bottom: 2px solid #2E75B6;
+    }
+
     /* ---------- FOOTER ---------- */
     .footer {
         text-align: center; color: #94A3B8; font-size: 0.85rem;
@@ -407,7 +429,21 @@ with p3:
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("<br><br>", unsafe_allow_html=True)
+# ============================================================
+# CLARIFYING NOTE — free trial vs paid service
+# ============================================================
+st.markdown("""
+<div class="pricing-note">
+    💡 <strong>How it works:</strong> Try the tool once for <strong>free</strong>.
+    When you're ready for unlimited monthly reports, we run them for you —
+    <strong>done-for-you from KES 3,000/month</strong>.
+    WhatsApp <a href="https://wa.me/254723161563" target="_blank">+254 723 161 563</a>
+    or email <a href="mailto:sammshawn1@gmail.com">sammshawn1@gmail.com</a>
+    to get started.
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
 # FINAL CTA
