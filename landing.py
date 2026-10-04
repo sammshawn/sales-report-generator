@@ -1,7 +1,8 @@
 """
-Landing Page — Sales Report Generator (Premium)
-================================================
-Beautiful, animated landing page. Entry point for the app.
+Landing Page — Sales Report Generator (Premium v2)
+===================================================
+Beautiful, animated landing page with sidebar hidden for a clean
+marketing look. Entry point for the app.
 """
 
 import streamlit as st
@@ -12,11 +13,30 @@ st.set_page_config(
     layout="wide",
 )
 
-# Hide default Streamlit chrome for cleaner look
+# ============================================================
+# HIDE STREAMLIT CHROME (sidebar, header, footer)
+# ============================================================
 st.markdown("""
 <style>
-    .block-container { padding-top: 1rem; padding-bottom: 2rem; max-width: 1200px; }
-    [data-testid="stHeader"] { background: transparent; }
+    /* Hide sidebar + its toggle button */
+    [data-testid="stSidebar"],
+    [data-testid="stSidebarNav"],
+    [data-testid="collapsedControl"],
+    section[data-testid="stSidebar"] {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+    }
+    /* Hide top header bar */
+    [data-testid="stHeader"] { display: none !important; }
+    /* Hide the "Made with Streamlit" footer */
+    footer { visibility: hidden; }
+    /* Widen the main container */
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        max-width: 1200px;
+    }
 
     /* ---------- ANIMATIONS ---------- */
     @keyframes fadeInUp {
@@ -30,10 +50,6 @@ st.markdown("""
     @keyframes pulse {
         0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(31,78,120,0.35); }
         50%      { transform: scale(1.03); box-shadow: 0 12px 32px rgba(31,78,120,0.5); }
-    }
-    @keyframes shimmer {
-        0%   { background-position: -200% center; }
-        100% { background-position: 200% center; }
     }
     @keyframes gradientShift {
         0%   { background-position: 0% 50%; }
