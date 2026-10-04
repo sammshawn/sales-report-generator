@@ -438,8 +438,7 @@ st.markdown("""
     When you're ready for unlimited monthly reports, we run them for you —
     <strong>done-for-you from KES 3,000/month</strong>.
     WhatsApp <a href="https://wa.me/254723161563" target="_blank">+254 723 161 563</a>
-    or email <a href="mailto:sammshawn1@gmail.com">sammshawn1@gmail.com</a>
-    to get started.
+    or email <strong>your@email.com</strong> to get started.
 </div>
 """, unsafe_allow_html=True)
 
